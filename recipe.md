@@ -234,8 +234,8 @@ When extracting all contact numbers
 Then it should return a list of all contact numbers from the diary entries
 """
 diary = Diary()
-entry1 = DiaryEntry("Meeting Notes", "Met with John, contact: 07979443221")
-entry2 = DiaryEntry("Project Plan", "Collaborate with Alice, contact: 07989765765")
+entry1 = DiaryEntry("Meeting Notes", "Met with John", "07979443221")
+entry2 = DiaryEntry("Project Plan", "Collaborate with Alice", "07989765765")
 diary.add(entry1)
 diary.add(entry2)
 entry1.extract_contacts()
