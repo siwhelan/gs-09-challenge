@@ -45,7 +45,7 @@ class Diary:
         max_words_read = wpm * minutes
         most_readable = None
         longest_so_far = 0
-        # loop throgh the diary entries
+        # loop through the diary entries
         for entry in self.diary:
             # if the word count is less than or equal to
             # the max readable words in that time

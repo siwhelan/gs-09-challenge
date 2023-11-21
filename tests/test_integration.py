@@ -67,6 +67,38 @@ def test_mark_todo_as_complete():
     assert tdl.incomplete() == [todo2]
 
 
+# test adding a todo - can get that todo back
+def test_add_and_recall_todo():
+    tdl = TodoList()
+    todo = Todo("Water Plants")
+    tdl.add(todo)
+    assert tdl.incomplete() == [todo]
+    assert todo not in tdl.complete()
+
+
+# test that when adding a todo, it is not added to the 'completed' list
+def test_new_todo_is_not_complete():
+    tdl = TodoList()
+    todo = Todo("Water Plants")
+    tdl.add(todo)
+    assert todo not in tdl.complete()
+
+
+"""
+Given a Todo in a TodoList
+When it is marked as complete
+Then it should not appear in the incomplete list
+"""
+
+
+def test_mark_todo_as_complete_adds_it_tocompleted_list():
+    todo_list = TodoList()
+    todo = Todo("Buy groceries")
+    todo_list.add(todo)
+    todo.mark_complete()
+    assert todo not in todo_list.incomplete()
+
+
 # test marking all as complete - i.e. 'give up'
 # incomplete should now be empty
 def test_mark_all_as_complete():

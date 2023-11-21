@@ -29,22 +29,11 @@ class DiaryEntry:
         return len(self.contents.split())
 
     def reading_time(self, wpm):
-        # Parameters:
-        #   wpm: an integer representing the number of words the user can read
-        #        per minute
-        # Returns:
         #   An integer representing an estimate of the reading time in minutes
         #   for the contents at the given wpm.
         return ceil(self.count_words() / wpm)
 
     def reading_chunk(self, wpm, minutes):
-        # Returns:
-        #   A string representing a chunk of the contents that the user could
-        #   read in the given number of minutes.
-        # If called again, `reading_chunk` should return the next chunk,
-        # skipping what has already been read, until the contents is fully read.
-        # The next call after that it should restart from the beginning
-        # Calculate the total number of words that can be read in the given time.
         readable_words = wpm * minutes
         words = self.contents.split()
         # Calculate the endpoint of the chunk. It is the minimum of the sum of the current position
